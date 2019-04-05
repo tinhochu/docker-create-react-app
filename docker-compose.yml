@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  mongo:
+    image: mongo:3.6.6
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/mongo/db:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: onspace_emaildb
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+  server:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
+    volumes:
+      - /app/node_moduless
+      - ./server:/app
