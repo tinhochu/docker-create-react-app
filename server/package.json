@@ -24,7 +24,7 @@
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
     "path-parser": "^4.0.3",
-    "sendgrid": "^5.2.3",
+    "@sendgrid/client": "^6.3.0",
     "stripe": "^6.28.0"
   },
   "devDependencies": {}
